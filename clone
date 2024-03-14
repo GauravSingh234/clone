@@ -1,0 +1,35 @@
+def credit_card_validator(num):
+    # step 1
+    a = "0"
+    a = int(a)
+    b = "0"
+    b = int(b)
+
+    # step 2 
+    num = str(num)
+    # b = len(num)
+   
+    num = num[::-1]
+    print(num)
+   
+
+    # step 3
+    for i in num[::2]:
+        a = a + int(i)
+    print(a)
+    for i in num[1::2]:
+        i = int(i) * 2
+
+
+        if i >=10:
+            b += (1 + (i % 10))
+        else:
+            b += i  
+
+    c = a + b
+    if (c % 10) == 0:
+        print("VALID")
+    else:
+        print("INVALID")     
+        
+credit_card_validator(4347699988887777)
